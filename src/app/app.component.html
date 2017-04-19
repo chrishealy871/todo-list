@@ -1,7 +1,24 @@
+<div class="row">
+    <button (click)="myModal.open()">open my modal</button>
+    <modal #myModal>
+        <modal-header>
+            <h1>Modal header</h1>
+        </modal-header>
+        <modal-content>
+               <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title">
+
+        </modal-content>
+        <modal-footer>
+            <button class="btn btn-primary" (click)="addTodo()">Add Task</button>
+                        <button class="btn btn-primary" (click)="myModal.close()">Exit</button>
+
+        </modal-footer>
+    </modal>
+</div>
+
 <section class="todoapp">
   <header class="header">
     <h1>Todos</h1>
-    <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
   </header>
   <section class="main" *ngIf="todos.length > 0">
     <ul class="todo-list">
