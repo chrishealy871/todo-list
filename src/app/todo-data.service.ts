@@ -11,6 +11,8 @@ export class TodoDataService {
   // Placeholder for todo's
   todos: Todo[] = [];
 
+  List: any[] = ["Run", "Walk", "Dance", "Hop","Sing"];
+
   constructor() {
   }
 
@@ -22,6 +24,7 @@ export class TodoDataService {
     this.todos.push(todo);
     return this;
   }
+
 
   // Simulate DELETE /todos/:id
   deleteTodoById(id: number): TodoDataService {
@@ -39,12 +42,16 @@ export class TodoDataService {
     Object.assign(todo, values);
     return todo;
   }
-
+ 
   // Simulate GET /todos
   getAllTodos(): Todo[] {
     return this.todos;
   }
 
+  getList(): Todo[] {
+    return this.List
+  }
+  
   // Simulate GET /todos/:id
   getTodoById(id: number): Todo {
     return this.todos

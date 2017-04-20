@@ -33,5 +33,8 @@ export class AppComponent {
   get todos() {
     return this.todoDataService.getAllTodos();
   }
-
+  
+  get getTodoList() {
+    return this.todoDataService.getList();
+  }
 }

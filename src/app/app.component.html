@@ -5,11 +5,13 @@
             <h1>Modal header</h1>
         </modal-header>
         <modal-content>
-               <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title">
+               <input class="new-todo" placeholder="What needs to be done?" autofocus="" (keyup.enter)="addTodo();myModal.close()" [(ngModel)]="newTodo.title">
 
         </modal-content>
         <modal-footer>
             <button class="btn btn-primary" (click)="addTodo();myModal.close()">Add Task</button>
+                        <!--<button class="btn btn-primary" (click)="getAllTodos();myModal.close()">Add List</button>-->
+
                         <button class="btn btn-primary" (click)="myModal.close()">Exit</button>
 
         </modal-footer>
@@ -26,7 +28,7 @@
         <div class="view">
           <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
           <label>{{todo.title}}</label>
-          <button class="destroy" (click)="removeTodo(todo)"></button>
+          <button class="destroy" (click)="removeTodo(todo)">Complete</button>
         </div>
       </li>
     </ul>
