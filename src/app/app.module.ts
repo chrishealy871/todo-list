@@ -7,14 +7,12 @@ import {App} from "./modal.component";
 import {FilterPipe} from './pipes';
 import {SearchComponent} from './search.component';
 import { AppComponent } from './app.component';
-import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     App,
     FilterPipe,
-    MyNewComponentComponent,
     SearchComponent,
   ],
   imports: [

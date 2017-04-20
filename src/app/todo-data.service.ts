@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Todo} from './todo';
-import {MyNewComponentComponent} from './my-new-component/my-new-component.component';
 
 @Injectable()
 export class TodoDataService {
