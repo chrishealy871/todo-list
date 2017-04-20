@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {Todo} from './todo';
 import {TodoDataService} from './todo-data.service';
 import {ModalModule} from "ngx-modal";
+import {FilterPipe} from './pipes'
+
 
 
 @Component({
@@ -11,12 +13,19 @@ import {ModalModule} from "ngx-modal";
   providers: [TodoDataService]
 })
 export class AppComponent {
-
+  title:String;
+  names:any;
   newTodo: Todo = new Todo();
 
   constructor(private todoDataService: TodoDataService) {
+    this.title = "Angular 2 simple search";
+        this.names = ['Prashobh','Abraham','Anil','Sam','Natasha','Marry','Zian','karan']
   }
+  
 
+  addNames(){
+    return this.names
+  }
   addTodo() {
     this.todoDataService.addTodo(this.newTodo);
     this.newTodo = new Todo();
@@ -34,7 +43,5 @@ export class AppComponent {
     return this.todoDataService.getAllTodos();
   }
   
-  get getTodoList() {
-    return this.todoDataService.getList();
+
   }
-}

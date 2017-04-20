@@ -1,3 +1,15 @@
+<div>
+  <h3> {{title}}</h3>
+  <input type="text" [(ngModel)]="queryString" id="search" placeholder="Search to type">
+
+  <ul>
+    <li *ngFor="let n of names | FilterPipe: queryString">
+      {{n}}
+    </li>
+  </ul>
+</div>
+
+
 <div class="row">
     <button (click)="myModal.open()">Add Todo</button>
     <modal #myModal>
@@ -10,8 +22,7 @@
         </modal-content>
         <modal-footer>
             <button class="btn btn-primary" (click)="addTodo();myModal.close()">Add Task</button>
-                        <!--<button class="btn btn-primary" (click)="getAllTodos();myModal.close()">Add List</button>-->
-
+                        <!--<button class="btn btn-primary" (click)="addNames();myModal.close()">Add List</button>-->
                         <button class="btn btn-primary" (click)="myModal.close()">Exit</button>
 
         </modal-footer>

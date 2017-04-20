@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Todo} from './todo';
+import {MyNewComponentComponent} from './my-new-component/my-new-component.component';
 
 @Injectable()
 export class TodoDataService {
@@ -10,8 +11,6 @@ export class TodoDataService {
 
   // Placeholder for todo's
   todos: Todo[] = [];
-
-  List: any[] = ["Run", "Walk", "Dance", "Hop","Sing"];
 
   constructor() {
   }
@@ -47,10 +46,6 @@ export class TodoDataService {
   getAllTodos(): Todo[] {
     return this.todos;
   }
-
-  getList(): Todo[] {
-    return this.List
-  }
   
   // Simulate GET /todos/:id
   getTodoById(id: number): Todo {
@@ -66,5 +61,6 @@ export class TodoDataService {
     });
     return updatedTodo;
   }
+ 
 
 }
