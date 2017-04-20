@@ -1,5 +1,5 @@
 <div class="row">
-    <button (click)="myModal.open()">open my modal</button>
+    <button (click)="myModal.open()">Add Todo</button>
     <modal #myModal>
         <modal-header>
             <h1>Modal header</h1>
@@ -9,7 +9,7 @@
 
         </modal-content>
         <modal-footer>
-            <button class="btn btn-primary" (click)="addTodo()">Add Task</button>
+            <button class="btn btn-primary" (click)="addTodo();myModal.close()">Add Task</button>
                         <button class="btn btn-primary" (click)="myModal.close()">Exit</button>
 
         </modal-footer>
